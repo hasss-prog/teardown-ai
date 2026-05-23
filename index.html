@@ -747,7 +747,7 @@ footer .left .lime { color: var(--lime); }
   body { background: white !important; color: black !important; background-image: none !important; }
   .matrix-pt, .h2h-name { text-shadow: none !important; }
 }
-</style>
+@media(max-width:768px){.hero-title{font-size:72px!important}.hero-sub{font-size:18px}}</style>
 </head>
 <body>
 
@@ -772,22 +772,22 @@ footer .left .lime { color: var(--lime); }
 <section class="hero">
   <div class="hero-tag">[ 01 ] <span class="lime">ONE COMPANY IN. A COMPETITIVE TEARDOWN OUT.</span></div>
   <h1 class="hero-title">TEAR<span class="dot"></span><br>DOWN<span class="slash">/</span></h1>
-  <p class="hero-sub">Type one company. We surface its fiercest rival, plot the field and ship a side by side strategy memo a senior operator would actually read. No fluff, no charts that explain nothing. Just the wedge a founder can build into.</p>
+  <p class="hero-sub">Type one company. We surface its fiercest rival, plot the field and ship a side by side strategy memo a where each company wins, loses and differentiates.</p>
 
-  <div class="search-tag"><span>✦</span> DROP A NAME. STRIPE. LINEAR. FIGMA. ANYTHING.</div>
+  <div class="search-tag"><span>✦</span> ENTER A COMPANY OR WEBSITE. APPLE. UBER. NETFLIX.</div>
   <div class="search-wrap">
     <div class="search-prefix"><span>&gt;</span><span class="cursor">_</span></div>
-    <input id="sIn" type="text" class="search-input" placeholder="E.G. NOTION" autocomplete="off" spellcheck="false"/>
+    <input id="sIn" type="text" class="search-input" placeholder="E.G. APPLE OR APPLE.COM" autocomplete="off" spellcheck="false"/>
     <button id="sBtn" class="search-btn"><span class="btn-text">RUN<br>TEARDOWN <span class="arrow">↗</span></span></button>
   </div>
 
   <div class="try-row">
     <span>TRY:</span>
-    <button class="try-chip" onclick="quickRun('Notion')">Notion</button>
-    <button class="try-chip" onclick="quickRun('Stripe')">Stripe</button>
-    <button class="try-chip" onclick="quickRun('Linear')">Linear</button>
-    <button class="try-chip" onclick="quickRun('Figma')">Figma</button>
-    <button class="try-chip" onclick="quickRun('Vercel')">Vercel</button>
+    <button class="try-chip" onclick="quickRun('Apple')">Apple</button>
+    <button class="try-chip" onclick="quickRun('Google')">Google</button>
+    <button class="try-chip" onclick="quickRun('Amazon')">Amazon</button>
+    <button class="try-chip" onclick="quickRun('Microsoft')">Microsoft</button>
+    <button class="try-chip" onclick="quickRun('Netflix')">Netflix</button>
   </div>
 
   <div class="err-wrap" id="errEl"></div>
@@ -795,7 +795,7 @@ footer .left .lime { color: var(--lime); }
   <div class="intro-cards">
     <div class="ic">
       <div class="ic-num">01 / WHAT IT DOES</div>
-      <div class="ic-body">Plots two companies on a positioning matrix, then ships a six row teardown a chief of staff could brief on.</div>
+      <div class="ic-body">Plots two companies on a positioning matrix, then ships a six row teardown a someone could use.</div>
     </div>
     <div class="ic">
       <div class="ic-num">02 / WHO IT IS FOR</div>
@@ -809,18 +809,18 @@ footer .left .lime { color: var(--lime); }
 </section>
 
 <div class="ticker">
-  <span class="item" onclick="quickRun('Notion')">NOTION VS CODA</span><span class="sep">/</span>
-  <span class="item" onclick="quickRun('Stripe')">STRIPE VS ADYEN</span><span class="sep">/</span>
-  <span class="item" onclick="quickRun('Linear')">LINEAR VS JIRA</span><span class="sep">/</span>
-  <span class="item" onclick="quickRun('Figma')">FIGMA VS SKETCH</span><span class="sep">/</span>
-  <span class="item" onclick="quickRun('Vercel')">VERCEL VS NETLIFY</span>
+  <span class="item" onclick="quickRun('Apple')">APPLE VS SAMSUNG</span><span class="sep">/</span>
+  <span class="item" onclick="quickRun('Google')">NETFLIX VS DISNEY+</span><span class="sep">/</span>
+  <span class="item" onclick="quickRun('Amazon')">UBER VS LYFT</span><span class="sep">/</span>
+  <span class="item" onclick="quickRun('Microsoft')">NIKE VS ADIDAS</span><span class="sep">/</span>
+  <span class="item" onclick="quickRun('Netflix')">SPOTIFY VS YOUTUBE MUSIC</span>
 </div>
 
 <section class="how-section">
   <div class="how-tag">HOW IT WORKS</div>
   <div class="how-title-grid">
     <h2 class="how-title">THREE STEPS.<br><span class="dim">NO FLUFF.</span></h2>
-    <p class="how-desc">Built for founders, chiefs of staff and operators who have read enough Notion vs Coda blog posts for one lifetime.</p>
+    <p class="how-desc">Built for people doing competitive research without reading endless comparison blogs.</p>
   </div>
   <div class="how-cards">
     <div class="how-card">
@@ -997,7 +997,7 @@ function finishLoadAndShow() {
 }
 
 function loadDemo() {
-  document.getElementById('sIn').value = 'Notion';
+  document.getElementById('sIn').value = 'Apple';
   USE_MOCK = true;
   run();
 }
@@ -1053,7 +1053,7 @@ function buildPrompt(co) {
 }
 
 // ════════════════════════════════════════════════
-// MOCK DATA (Notion vs Coda fallback)
+// MOCK DATA (Apple vs Coda fallback)
 // ════════════════════════════════════════════════
 function getMockData(co) {
   var cap = co.charAt(0).toUpperCase() + co.slice(1);
@@ -1073,7 +1073,7 @@ function getMockData(co) {
       {"dim":"GTM MOTION","a":{"headline":"PRODUCT LED AT BRAND SCALE.","detail":"Templates, creators, an education flywheel and consumer grade onboarding push net new teams in without a sales call."},"b":{"headline":"PLG WITH A SHARP SALES OVERLAY.","detail":"Self serve teams up to 50 seats, then an account team flips into mid market with workflow proof of value."}},
       {"dim":"CORE STRENGTH","a":{"headline":"THE MOST LOVED BLANK CANVAS IN SOFTWARE.","detail":"Brand gravity, aesthetic defaults and a template economy that no rival has been able to clone."},"b":{"headline":"DOC AS APP PRIMITIVES THAT ACTUALLY SHIP.","detail":"Live tables, formulas and Packs let a doc replace a small internal tool, not just describe one."}},
       {"dim":"BIGGEST VULNERABILITY","a":{"headline":"POWER USERS HIT A WORKFLOW CEILING.","detail":"The moment a team needs real logic, the product bends. That is the exact moment a Coda or a startup steals the seat."},"b":{"headline":"THE TOP OF FUNNEL IS QUIET.","detail":"New teams default to the bigger brand before they ever try Coda. Awareness is the choke point, not the product."}},
-      {"dim":"RECENT STRATEGIC MOVE","a":{"headline":"BET THE COMPANY ON THE AGENT LAYER.","detail":"Shipped AI Connectors and positioned Notion AI as the connective tissue across Slack, Google and Jira."},"b":{"headline":"ACQUIRED BY GRAMMARLY, FOLDED INTO SUPERHUMAN GROUP.","detail":"Now part of a broader AI productivity suite. Distribution problem solved on paper, identity problem just beginning."}}
+      {"dim":"RECENT STRATEGIC MOVE","a":{"headline":"BET THE COMPANY ON THE AGENT LAYER.","detail":"Shipped AI Connectors and positioned Apple AI as the connective tissue across Slack, Google and Jira."},"b":{"headline":"ACQUIRED BY GRAMMARLY, FOLDED INTO SUPERHUMAN GROUP.","detail":"Now part of a broader AI productivity suite. Distribution problem solved on paper, identity problem just beginning."}}
     ],
     "wins":[
       "Owns the default. New teams open the product before they evaluate anything.",
@@ -1085,7 +1085,7 @@ function getMockData(co) {
       "Per seat math is brittle once AI add ons stack on top of editor seats.",
       "Doc as app is the next paradigm. The product is not architected for it."
     ],
-    "wedge":"The wedge sits between Notion's brand reach and Coda's workflow depth. The next winner lets a team start as fast as a blank Notion page, then graduate into Coda grade logic without a migration, without a new tool and without a politics tax on seats. Ship a workspace where every page is a live app from day one, priced on outcomes rather than editors, with AI agents that operate inside the doc not alongside it. A focused founder pointing at this exact gap buys a 24 month head start before either incumbent can reorganise to close it.",
+    "wedge":"The wedge sits between Apple's brand reach and Coda's workflow depth. The next winner lets a team start as fast as a blank Apple page, then graduate into Coda grade logic without a migration, without a new tool and without a politics tax on seats. Ship a workspace where every page is a live app from day one, priced on outcomes rather than editors, with AI agents that operate inside the doc not alongside it. A focused founder pointing at this exact gap buys a 24 month head start before either incumbent can reorganise to close it.",
     "wedgeBullets":[
       "Outcome based pricing, not per seat tax.",
       "Agent native pages, not bolt on AI.",
