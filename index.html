@@ -937,12 +937,12 @@ async function run() {
   try {
     var prompt = buildPrompt(co);
     var res = await fetch(
-      'https://api.groq.com/openai/v1/chat/completions',
+      '/api/groq',
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'Bearer ' + KEY
+          
         },
         body: JSON.stringify({
           model: 'llama-3.3-70b-versatile',
